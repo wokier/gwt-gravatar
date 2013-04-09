@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-public class GravatarTest extends GWTTestCase {
+public class GravatarImageTest extends GWTTestCase {
 
     @Override
     public String getModuleName() {
@@ -13,7 +13,7 @@ public class GravatarTest extends GWTTestCase {
 
     @Test
     public void test() throws Exception {
-	Gravatar gravatar = new Gravatar("wokier@gmail.com");
+	GravatarImage gravatar = new GravatarImage("wokier@gmail.com");
 	{
 	    assertEquals("http://www.gravatar.com/avatar/0f243c44c7d921cb41ebdfcf8202b0c3", gravatar.getUrl());
 	}

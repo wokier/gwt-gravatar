@@ -3,24 +3,40 @@ package com.github.wokier.gwt.client;
 import java.security.NoSuchAlgorithmException;
 
 import com.google.gwt.core.client.impl.Md5Digest;
-import com.google.gwt.user.client.ui.Image;
 import com.googlecode.gwt.crypto.bouncycastle.util.encoders.Hex;
 
 /**
- * Gravatar Image
+ * Url Builder
  * 
  * @author francois wauquier
  * 
  */
-public class Gravatar extends Image {
+public class GravatarUrlBuilder {
+    private static GravatarUrlBuilder instance;
+
+    private GravatarUrlBuilder() {
+    }
 
     /**
-     * Constructor
+     * Get unique instance
+     * 
+     * @return
+     */
+    public static GravatarUrlBuilder get() {
+	if (instance == null) {
+	    instance = new GravatarUrlBuilder();
+	}
+	return instance;
+    }
+
+    /**
+     * Build the url
      * 
      * @param email
+     * @return
      */
-    public Gravatar(String email) {
-	setUrl("http://www.gravatar.com/avatar/" + hash(email));
+    public String build(String email) {
+	return "http://www.gravatar.com/avatar/" + hash(email);
     }
 
     private String hash(String email) {

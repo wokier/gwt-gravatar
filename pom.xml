@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.wokier</groupId>
 	<artifactId>gwt-gravatar</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 	<name>gwt gravatar</name>
 	<description>gwt gravatar http://gravatar.com</description>
 
@@ -34,6 +34,7 @@
 				<directory>src/main/java</directory>
 				<includes>
 					<include>**/*.java</include>
+					<include>**/*.gwt.xml</include>
 				</includes>
 			</resource>
 
@@ -96,6 +97,7 @@
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-dev</artifactId>
 			<version>${gwt.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
